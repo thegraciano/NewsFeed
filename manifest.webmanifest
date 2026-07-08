@@ -1,0 +1,51 @@
+HISTÓRIAS DO MUNDO — aplicativo web (PWA) para idosos
+=====================================================
+
+O QUE É
+--------
+Um aplicativo simples, em forma de feed, com acontecimentos históricos
+famosos em letras grandes. Feito para idosos usarem em tablets na posição
+horizontal (paisagem). Basta abrir e deslizar para baixo.
+
+COMO USAR (rápido)
+------------------
+1. Coloque todos os arquivos desta pasta em um mesmo local (ou em um site).
+2. Abra o arquivo "index.html" pelo navegador (de preferência o Chrome no Android).
+   - Para o funcionamento completo de PWA (instalar e ficar offline), o ideal
+     é servir a pasta por um endereço web (http), pois alguns navegadores
+     bloqueiam recursos ao abrir o arquivo diretamente do disco.
+3. No Android, toque no menu do navegador e escolha "Adicionar à tela inicial"
+   para instalar o app. Depois disso, ele funciona offline.
+
+SERVIR LOCALMENTE (opcional, para testar o PWA no computador)
+-------------------------------------------------------------
+Abra o terminal dentro desta pasta e rode um dos comandos:
+   python3 -m http.server 8000
+   (ou)  npx serve .
+Depois acesse no navegador: http://localhost:8000
+
+RECURSOS
+--------
+- Botões grandes: aumentar/diminuir letra, modo claro/escuro, tela cheia.
+- Modo quiosque (cadeado): esconde a barra e evita saídas acidentais.
+  Para sair do modo quiosque, toque 5 vezes seguidas no topo da tela.
+- A posição de leitura é salva sozinha: ao reabrir, volta ao último ponto.
+- Funciona offline após o primeiro carregamento.
+- As ilustrações são geradas dentro do próprio app; não há imagens ou links
+  externos, nem anúncios, cadastro ou notificações.
+
+ARQUIVOS
+--------
+- index.html ............ estrutura da página
+- styles.css ............ aparência (cores, tamanhos, layout)
+- app.js ................ funcionamento (feed, botões, memória de leitura)
+- data.js ............... base com as histórias (edite para incluir mais)
+- sw.js ................. service worker (offline)
+- manifest.webmanifest .. dados de instalação do PWA
+- icons/ ................ ícones do aplicativo
+- gerar-icones.js ....... script opcional para regerar os ícones
+
+ADICIONAR NOVAS HISTÓRIAS
+-------------------------
+Abra "data.js" e copie o modelo de um item, alterando título (t), período (p),
+categoria (c), emoji (e), cores (cor), texto (txt) e curiosidade (cur).

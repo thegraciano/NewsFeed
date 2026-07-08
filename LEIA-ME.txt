@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<!-- Otimizado para tablets em modo paisagem; impede zoom acidental por gesto -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+	<meta name="theme-color" content="#8B5E34" />
+	<meta name="description" content="Histórias do Mundo — acontecimentos históricos famosos em letras grandes, feito para idosos." />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<title>Histórias do Mundo</title>
+	<link rel="manifest" href="manifest.webmanifest" />
+	<link rel="apple-touch-icon" href="icons/icon-192.png" />
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<!-- Barra superior fixa com controles grandes e simples -->
+	<header class="barra" id="barra">
+		<div class="barra-titulo">
+			<span class="barra-emoji" aria-hidden="true">🌍</span>
+			<span>Histórias do Mundo</span>
+		</div>
+
+		<div class="barra-controles">
+			<!-- Tamanho da letra -->
+			<button class="btn" id="btnMenosFonte" aria-label="Diminuir letra" title="Diminuir letra">
+				<span class="btn-icone">A<small>−</small></span>
+			</button>
+			<button class="btn" id="btnMaisFonte" aria-label="Aumentar letra" title="Aumentar letra">
+				<span class="btn-icone">A<small>+</small></span>
+			</button>
+
+			<!-- Modo claro/escuro -->
+			<button class="btn" id="btnTema" aria-label="Alternar modo claro e escuro" title="Modo claro/escuro">
+				<span class="btn-icone" id="iconeTema">🌙</span>
+			</button>
+
+			<!-- Tela cheia -->
+			<button class="btn" id="btnTelaCheia" aria-label="Tela cheia" title="Tela cheia">
+				<span class="btn-icone">⛶</span>
+			</button>
+
+			<!-- Modo quiosque -->
+			<button class="btn" id="btnQuiosque" aria-label="Modo quiosque" title="Modo quiosque">
+				<span class="btn-icone">🔒</span>
+			</button>
+		</div>
+	</header>
+
+	<!-- Feed principal: os cartões são inseridos aqui pelo JavaScript -->
+	<main class="feed" id="feed" aria-live="polite"></main>
+
+	<!-- Sentinela usada para carregamento progressivo (rolagem infinita) -->
+	<div id="sentinela" class="sentinela" aria-hidden="true">
+		<div class="carregando">Carregando mais histórias…</div>
+	</div>
+
+	<!-- Botão grande para voltar ao topo -->
+	<button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao início" title="Voltar ao início">↑ Início</button>
+
+	<!-- Aviso discreto para sair do modo quiosque -->
+	<button class="sair-quiosque" id="sairQuiosque" aria-label="Sair do modo quiosque">Sair do modo quiosque</button>
+
+	<script src="data.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
